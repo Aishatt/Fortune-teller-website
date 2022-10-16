@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Eight-Ball-Magic</title>
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="images/logo-fort.jpg" width="10%" alt="">
+      <ul>
+        <li> Community</li>
+        <li> Blog</li>
+        <li> Learn More</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="headline">
+    <span style="color: red;">SPONSORED CONTENT</span>BRANDHUB
+    <h1>2022's Best Online Fortune Teller Websites for Accurate, Insightful, Free Fortune Telling</h1>
+    <p id="today-date">
+
+    </p>
+  </div>
+  <!--img background-->
+  <div class="back">
+  </div>
+<!--main content-->
+  <center>
+    <h1>8 Ball Magic Fortune Telling</h1>
+    <div>
+      <p>The Magiv 8-Ball is a plastic sphere made to resemble an eight-ball used in pool billbards that's used for
+        fortune-telling and seeking advice.</p>
+    </div>
+    <h3> Lets Get Started!</h3>
+    <div id="main">
+      <div class='card'>
+        <label for="username" class="que">What's your Name?</label><br>
+        <input type="text" name="username" id="username" /><br><br>
+
+        <label for="question" class="que">Ask The Magic Ball</label><br>
+        <input type="text" name="question" id="question" /><br><br>
+
+        <button onclick="predict()">Submit</button>
+        <div id="predict"></div>
+      </div>
+
+    </div>
+
+
+    <div id="ad">
+      <h2>
+        You might also like
+      </h2>
+      <iframe src="https://www.youtube.com/embed/BS-z6fjJR5A?start=4" title="YouTube video player" frameborder="0"
+        alt='Epic dark Fantasy: connect to internet'
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <br>
+      <br>
+      <div>
+        <li>
+          <a href="https://www.youtube.com/watch?v=BS-z6fjJR5A">Epic Dark Fantasy Music</a>
+        </li><br>
+        <li>
+          <a href="https://www.youtube.com/watch?v=6Mx3oQdaucs">Are Pyschics and Fortune Tellers Evil?</a>
+        </li>
+      </div>
+    </div>
+  </center>
+
+
+
+  <script>
+    //initialize name as empty
+    var userName = '';
+
+    userName == '' ? console.log(`Hello ${userName}`) : console.log(`Hello!`)
+    //your question
+    var userQuestion = '';
+    console.log(userQuestion)
+
+    console.log(`${userName} asked ${userQuestion}`);
+    //generate random whole num since we need random answer to be chosen
+    const randomNumber = Math.floor(Math.random() * 8);
+    let eightBall = '';
+    console.log(`value of eightball is :${randomNumber}`);
+    //conditions 
+    switch (randomNumber) {
+      case 0:
+        eightBall = 'It is certain';
+        break;
+      case 1:
+        eightBall = 'It is decidedly so';
+        break;
+      case 2:
+        eightBall = 'Reply hazy try again';
+        break;
+      case 3:
+        eightBall = 'Cannot predict now';
+        break;
+      case 4:
+        eightBall = 'Do not count on it';
+        break;
+      case 5:
+        eightBall = 'My sources say no';
+        break;
+      case 6:
+        eightBall = 'Outlook not so good';
+        break;
+      case 7:
+        eightBall = 'Signs point to yes';
+        break;
+      case 8:
+        eightBall = 'It is amazing';
+        break;
+      default:
+        console.log('you only have 8 trials')
+        break;
+    }
+
+    //DOM Manipulation
+    function predict() {
+      var userQuestion = document.getElementById('question').value;
+      var userName = document.getElementById('username').value;
+      let final = document.getElementById('predict').innerText = ` ${userQuestion}?
+
+  Hello ${userName}, ${eightBall}`;
+    }
+    console.log(eightBall);
+    //current date
+    const date = new Date()
+    const todayDate = document.getElementById('today-date').innerText = `Today's Date: ${date.toDateString()}
+    Time: ${date.toTimeString()}`
+      ;
+  </script>
+</body>
+
+</html>
